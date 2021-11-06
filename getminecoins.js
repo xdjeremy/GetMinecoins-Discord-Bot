@@ -21,7 +21,9 @@ client.on('messageCreate', msg => {
     if (msg.author.bot) return;
 
     // ignore messages that don't start with the prefix
-    if (msg.content.indexOf(process.env.PREFIX) !== 0) return;
+    if (msg.content.indexOf(process.env.PREFIX) !== 0) {
+        msg.delete();
+    };
 
     // get the command and the args
     const args = msg.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
@@ -43,7 +45,9 @@ client.on('messageCreate', msg => {
 
     if (command === 'done') {
         msg.author.send('https://drive.protonmail.com/urls/WX34HX1NFR#WVHmqvJtfL1u');
-    } else {
+    }
+
+    if (command === 'download' && command === 'done') {
         msg.delete();
     }
 });
