@@ -40,6 +40,12 @@ client.on('messageCreate', msg => {
         }
         getDownloadLink();
     };
+
+    if (command === 'done') {
+        msg.author.send('https://drive.protonmail.com/urls/WX34HX1NFR#WVHmqvJtfL1u');
+    } else {
+        msg.delete();
+    }
 });
 
 client.login(process.env.TOKEN);
