@@ -47,7 +47,7 @@ client.on('messageCreate', msg => {
         msg.author.send('https://drive.protonmail.com/urls/WX34HX1NFR#WVHmqvJtfL1u');
     }
 
-    if (command === 'download' && command === 'done') {
+    if (command != 'download' && command != 'done') {
         msg.delete();
     }
 });
