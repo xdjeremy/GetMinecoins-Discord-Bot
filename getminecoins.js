@@ -23,6 +23,7 @@ client.on('messageCreate', msg => {
     // ignore messages that don't start with the prefix
     if (msg.content.indexOf(process.env.PREFIX) !== 0) {
         msg.delete();
+        return;
     };
 
     // get the command and the args
@@ -49,6 +50,7 @@ client.on('messageCreate', msg => {
 
     if (command != 'download' && command != 'done') {
         msg.delete();
+        return;
     }
 });
 
